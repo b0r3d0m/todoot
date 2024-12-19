@@ -12,13 +12,9 @@ function enterText(text: string) {
 
 export function activate(context: vscode.ExtensionContext) {
 	const disposable = vscode.commands.registerCommand('todoot.insertQuote', () => {
-		axios.get('https://zenquotes.io', {
-				params: {
-					api: 'random'
-				}
-			})
+		axios.get('https://dummyjson.com/quotes/random')
 			.then(function (response) {
-				enterText('// TODO: ' + response.data[0].q);
+				enterText('// TODO: ' + response.data.quote);
 			})
 			.catch(function (error) {
 				vscode.window.showInformationMessage(error);
