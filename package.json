@@ -3,7 +3,8 @@
   "displayName": "ToDoot",
   "description": "Generate inspirational To Do messages",
   "repository": "https://github.com/b0r3d0m/todoot",
-  "version": "0.0.5",
+  "icon": "images/icon.jpg",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.96.0"
   },

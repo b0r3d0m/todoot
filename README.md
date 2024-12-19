@@ -1,7 +1,5 @@
 # To Doot
 
-![Doot](./images/doot.jpg)
-
 ## Features
 
 Tired of boring To Dos scattered all over the code?
