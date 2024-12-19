@@ -1,6 +1,6 @@
-# To Doot README
+# To Doot
 
-\!\[Doot\]\(images/doot.jpg\)
+![Doot](./images/doot.jpg)
 
 ## Features
 
@@ -8,7 +8,7 @@ Tired of boring To Dos scattered all over the code?
 
 Work smart, not hard, and let this extension generate it for you!
 
-\!\[Meme\]\(images/meme.png\)
+![Meme](./images/meme.png)
 
 ## How to Use
 
