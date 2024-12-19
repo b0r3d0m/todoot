@@ -14,11 +14,12 @@ export function activate(context: vscode.ExtensionContext) {
     const disposable = vscode.commands.registerCommand('todoot.insertQuote', () => {
         axios.get('https://dummyjson.com/quotes/random')
             .then(function (response) {
-                enterText('// TODO: ' + response.data.quote);
+                const prefix = vscode.workspace.getConfiguration('todoot').prefix;
+                enterText(prefix + response.data.quote);
             })
             .catch(function (error) {
                 vscode.window.showInformationMessage(error);
-            })
+            });
     });
 
     context.subscriptions.push(disposable);

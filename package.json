@@ -3,7 +3,7 @@
   "displayName": "ToDoot",
   "description": "Generate inspirational To Do messages",
   "repository": "https://github.com/b0r3d0m/todoot",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -25,7 +25,17 @@
         "key": "shift+alt+t",
         "mac": "shift+cmd+t"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "General",
+      "properties": {
+        "todoot.prefix": {
+          "type": "string",
+          "default": "// TODO: ",
+          "description": "The prefix used for the inserted strings."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
