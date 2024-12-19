@@ -4,7 +4,7 @@
   "description": "Generate inspirational To Do messages",
   "repository": "https://github.com/b0r3d0m/todoot",
   "icon": "images/icon.jpg",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -34,6 +34,11 @@
           "type": "string",
           "default": "// TODO: ",
           "description": "The prefix used for the inserted strings."
+        },
+        "todoot.sound": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play sound when inserting strings."
         }
       }
     }
@@ -58,6 +63,7 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "axios": "^1.7.9"
+    "axios": "^1.7.9",
+    "sound-play": "^1.1.0"
   }
 }

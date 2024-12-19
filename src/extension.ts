@@ -1,6 +1,9 @@
 import * as vscode from 'vscode';
 import axios from 'axios';
 
+const sound = require('sound-play');
+const path = require('path');
+
 function enterText(text: string) {
     const editor = vscode.window.activeTextEditor;
     if (editor) {
@@ -11,11 +14,18 @@ function enterText(text: string) {
 }
 
 export function activate(context: vscode.ExtensionContext) {
+    const dootSound = path.join(__dirname, '../audio/doot.mp3');
+
     const disposable = vscode.commands.registerCommand('todoot.insertQuote', () => {
         axios.get('https://dummyjson.com/quotes/random')
             .then(function (response) {
-                const prefix = vscode.workspace.getConfiguration('todoot').prefix;
-                enterText(prefix + response.data.quote);
+                const config = vscode.workspace.getConfiguration('todoot');
+
+                if (config.sound) {
+                    sound.play(dootSound);
+                }
+
+                enterText(config.prefix + response.data.quote);
             })
             .catch(function (error) {
                 vscode.window.showInformationMessage(error);
